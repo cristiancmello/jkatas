@@ -1,11 +1,14 @@
 package org.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BowlingTest {
-    @Test
-    public void canCreateGame() {
-        var g = new Game();
+    private Game g;
+
+    @BeforeEach
+    void setUp() {
+        g = new Game();
     }
 
     @Test
