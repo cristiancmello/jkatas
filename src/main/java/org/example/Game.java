@@ -1,17 +1,19 @@
 package org.example;
 
 public class Game {
-
     private int score;
+    private int[] rolls = new int[21]; // 21 = 20 rolls + 1 extra when spare or strike done
+    private int currentRoll = 0;
 
     public void roll(int pins) {
-        if (pins + lastPins) {
-            // Sei la o que vai acontecer aqui... mas há indícios de falha de design...
-        }
-        score += pins;
+        rolls[currentRoll++] = pins;
     }
 
     public int score() {
+        for (int i = 0; i < rolls.length; i++) {
+            score += rolls[i];
+        }
+
         return score;
     }
 }
