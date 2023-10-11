@@ -7,4 +7,10 @@ public class BowlingTest {
     public void canCreateGame() {
         var g = new Game();
     }
+
+    @Test
+    public void canRoll() {
+        var g = new Game();
+        g.roll(0);
+    }
 }
