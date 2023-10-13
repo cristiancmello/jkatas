@@ -22,6 +22,10 @@ public class BowlingTest {
         rollMany(2, 5);
     }
 
+    private void rollStrike() {
+        g.roll(10);
+    }
+
     @Test
     public void canRoll() {
         g.roll(0);
@@ -52,7 +56,7 @@ public class BowlingTest {
 
     @Test
     public void oneStrike() {
-        g.roll(10); // strike
+        rollStrike(); // strike
         g.roll(2);
         g.roll(3);
         rollMany(16, 0);
