@@ -12,7 +12,7 @@ public class Game {
     public int score() {
         int frameIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[frameIndex] + rolls[frameIndex + 1] == 10) {
+            if (isSpare(frameIndex)) {
                 score += 10 + rolls[frameIndex + 2];
                 frameIndex += 2;
             } else {
@@ -22,5 +22,9 @@ public class Game {
         }
 
         return score;
+    }
+
+    private boolean isSpare(int frameIndex) {
+        return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
     }
 }

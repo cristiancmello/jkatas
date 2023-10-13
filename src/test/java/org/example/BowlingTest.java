@@ -18,6 +18,10 @@ public class BowlingTest {
             g.roll(pins);
     }
 
+    private void rollSpare() {
+        rollMany(2, 5);
+    }
+
     @Test
     public void canRoll() {
         g.roll(0);
@@ -40,9 +44,10 @@ public class BowlingTest {
 
     @Test
     public void oneSpare() {
-        rollMany(2, 5);
+        rollSpare();
         g.roll(7);
         rollMany(17, 0); // por que 0 pins? será pq foram feitos 3 rolls? 2 em rollMany(2, 5) + 1 em g.roll(7)?
         assertEquals(24, g.score());
     }
+
 }
